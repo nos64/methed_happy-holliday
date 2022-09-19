@@ -22,13 +22,13 @@ const Footer = () => {
               <a href='https://vk.com/id8862703' target='_blank' rel="noreferrer" className={style.link}><VKIcon/></a>
             </li>
             <li className={style.item}>
-              <a href='https://t.me/ziglobe' target='_blank' rel="noreferrer" className={style.link}><TGIcon/></a>
+              <a href='https://t.me/ziglobe' target='_blank' rel="noreferrer" className={style.link}><TGIcon /></a>
             </li>
             <li className={style.item}>
-              <a href='https://pinterest.com' target='_blank' rel="noreferrer" className={style.link}><PinterestIcon/></a>
+              <a href='https://pinterest.com' target='_blank' rel="noreferrer" className={style.link}><PinterestIcon /></a>
             </li>
             <li className={style.item}>
-              <a href='https://stumbleupon.com' target='_blank' rel="noreferrer" className={style.link}><StumbleuponIcon/></a>
+              <a href='https://stumbleupon.com' target='_blank' rel="noreferrer" className={style.link}><StumbleuponIcon /></a>
             </li>
           </ul>
       </div>

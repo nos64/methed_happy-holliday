@@ -3,18 +3,18 @@ import Header from './components/Header/Header';
 import Card from './components/Card/Card';
 import { TextContextProvider } from './context/textContext';
 import { ImgContextProvider } from './context/imgContext';
-import { HolidayContextProvider } from './context/holidayContext';
+import { HolidaysContextProvider } from './context/holidaysContext';
 
 const wrapper = {
   display: 'flex',
   flexDirection: 'column',
-  heighr: '100vh',
+  height: '100vh',
 };
 
 const App = () => {
   return (
     <div className={wrapper}>
-    <HolidayContextProvider>
+    <HolidaysContextProvider>
       <ImgContextProvider>
         <TextContextProvider>
           <Header />
@@ -22,7 +22,7 @@ const App = () => {
           <Footer />
         </TextContextProvider>
       </ImgContextProvider>
-    </HolidayContextProvider>
+    </HolidaysContextProvider>
     </div>
   );
 }

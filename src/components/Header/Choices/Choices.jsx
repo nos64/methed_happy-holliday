@@ -18,7 +18,6 @@ const Choices = () => {
   useEffect(() => {
     dispatch(fetchHolidays());
   }, [dispatch])
-  console.log('holidays: ', holidays);
   return (
     <div className={style.wrapper}>
       <button className={style.button} onClick={toggleChoices}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './EmptyCard.module.css';
+import style from './EmptyCard.module.scss';
 
 const EmptyCard = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
-import style from './Footer.module.css';
+import style from './Footer.module.scss';
 import { ReactComponent as VKIcon } from '../../img/vk.svg';
 import { ReactComponent as TGIcon } from '../../img/tg.svg';
 import { ReactComponent as PinterestIcon } from '../../img/pinterest.svg';

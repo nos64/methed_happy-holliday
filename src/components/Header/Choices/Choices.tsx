@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import style from './Choices.module.css';
+import style from './Choices.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHolidays } from '../../../store/holidaysSlice';
 import { fetchText } from '../../../store/textSlice';
 import { fetchImage } from '../../../store/imgSlice';
 import { NavLink, useParams } from 'react-router-dom';
+import { useAppDispath } from './../../../hooks/hooks';
+import { useAppSelector } from 'src/hooks/hooks';
 
 const Choices = () => {
   const [isOpenChoices, setIdOpenChoicse] = useState(false);
-  const { holidays, loading } = useSelector(state => state.holidays);
-  const dispatch = useDispatch();
+  const { holidays, loading } = useAppSelector(state => state.holidays);
+  const dispatch = useAppDispath();
   const { holiday } = useParams();
 
   const toggleChoices = () => {
-    if (loading !== 'success') return;
+    if (loading) return;
     setIdOpenChoicse(!isOpenChoices)
   }
 
@@ -28,12 +30,13 @@ const Choices = () => {
   return (
     <div className={style.wrapper}>
       <button className={style.button} onClick={toggleChoices}>
-        {loading !== 'success'?
-        'Загрузка...' : holidays[holiday] || 'Выбрать праздник'}
+        {loading ?
+        'Загрузка...' : (holiday && holidays[holiday]) || 'Выбрать праздник'}
+        {/* 'Загрузка...' : 'Выбрать праздник'} */}
       </button>
       {isOpenChoices && (
         <ul className={style.list}>
-        {Object.entries(holidays).map(item => (
+        {holidays && Object.entries(holidays).map(item => (
           <li
             onClick={() => {
               toggleChoices();

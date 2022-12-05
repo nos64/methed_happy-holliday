@@ -1,21 +1,21 @@
 import React from 'react';
 import Container from '../Container/Container';
-import style from './Header.module.css';
+import style from './Header.module.scss';
 import Choices from './Choices/Choices';
 import { fetchText } from '../../store/textSlice';
 import { fetchImage } from '../../store/imgSlice';
-import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useAppDispath } from './../../hooks/hooks';
 
 const Header = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispath();
   const { holiday } = useParams();
 
   const handleChangeImage = () => {
-    dispatch(fetchImage(holiday))
+    holiday && dispatch(fetchImage(holiday))
   }
   const handleChangeText = () => {
-    dispatch(fetchText(holiday))
+    holiday && dispatch(fetchText(holiday))
   }
   return (
     <header className={style.header}>

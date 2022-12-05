@@ -2,28 +2,18 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-const wrapper = {
-  display: 'flex',
-  flexDirection: 'column',
-  height: '100vh',
-};
+import styles from './Layout.module.scss';
+import { useAppSelector } from 'src/hooks/hooks';
 
-const btn = {
-  display: 'block',
-  margin: '20px auto',
-  padding: '10px',
-  border: '2px solid #04996c'
-}
 const Layout = () => {
-  const {text: {idText}, image: {idImg}} = useSelector(state => state);
+  const {text: {idText}, image: {idImg}} = useAppSelector (state => state);
   return (
-    <div style={wrapper}>
+    <div className={styles.wrapper}>
       <Header />
       <Outlet />
       {idText && idImg && (
-        <Link style={btn} to={`singleCard/${idText}/${idImg}`}>
+        <Link className={styles.btn} to={`singleCard/${idText}/${idImg}`}>
           Поделиться открыткой
         </Link>
       )}

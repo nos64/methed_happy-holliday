@@ -4,11 +4,12 @@ import style from './Header.module.css';
 import Choices from './Choices/Choices';
 import { fetchText } from '../../store/textSlice';
 import { fetchImage } from '../../store/imgSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 const Header = () => {
-  const { holiday } = useSelector(state => state.holidays);
   const dispatch = useDispatch();
+  const { holiday } = useParams();
 
   const handleChangeImage = () => {
     dispatch(fetchImage(holiday))

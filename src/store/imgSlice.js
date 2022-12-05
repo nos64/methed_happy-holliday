@@ -11,6 +11,15 @@ export const fetchImage = createAsyncThunk(
   }
 );
 
+export const fetchImageId = createAsyncThunk(
+  'image/fetchImageId',
+  async(Id) => {
+    const res = await fetch(`${URI_API}/image/${Id}`);
+    const data = await res.json();
+    return data;
+  }
+);
+
 const imageSlice = createSlice({
   name: 'image',
   initialState: {
@@ -31,6 +40,22 @@ const imageSlice = createSlice({
       state.idImg = action.payload.idImg;
     },
     [fetchImage.rejected]: (state, action) => {
+      state.loading = 'failed';
+      state.urlImg = CardBG;
+      state.idImg = '';
+    },
+
+    [fetchImageId.pending]: state => {
+      state.loading = 'loading';
+      state.urlImg = CardBG;
+      state.idImg = '';
+    },
+    [fetchImageId.fulfilled]: (state, action) => {
+      state.loading = 'success';
+      state.urlImg = action.payload.urlImg;
+      state.idImg = action.payload.idImg;
+    },
+    [fetchImageId.rejected]: (state) => {
       state.loading = 'failed';
       state.urlImg = CardBG;
       state.idImg = '';

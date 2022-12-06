@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { URI_API } from '../const/const';
 
 export const useText = holiday => {
-  const [text, setText] = useState(`Выберете повод для поздравления`);
+  const [text, setText] = useState(`Выберете повод для поздравления!`);
 
   useEffect(() => {
     if (!holiday) return;

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { URI_API } from "../const/const";
+
 import CardBG from '../img/card-bg.jpg';
 
 interface IImg {

@@ -1,11 +1,13 @@
 import React from 'react';
 import Container from '../Container/Container';
-import style from './Header.module.scss';
 import Choices from './Choices/Choices';
+
 import { fetchText } from '../../store/textSlice';
 import { fetchImage } from '../../store/imgSlice';
 import { useParams } from 'react-router-dom';
 import { useAppDispath } from './../../hooks/hooks';
+
+import style from './Header.module.scss';
 
 const Header = () => {
   const dispatch = useAppDispath();

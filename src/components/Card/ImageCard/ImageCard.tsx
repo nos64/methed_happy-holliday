@@ -1,6 +1,8 @@
 import React from 'react';
-import CardBG from '../../../img/card-bg.jpg';
+
 import { useAppSelector } from 'src/hooks/hooks';
+import CardBG from '../../../img/card-bg.jpg';
+
 
 
 const ImageCard = () => {

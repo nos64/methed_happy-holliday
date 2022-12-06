@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import style from './Card.module.scss';
+
 import ImageCard from './ImageCard/ImageCard';
 import Felicitation from './Felicitation/Felicitation';
+
 import { useParams } from 'react-router-dom';
-import { fetchTextId } from '../../store/textSlice';
 import { fetchImageId } from '../../store/imgSlice';
 import { useAppDispath } from '../../hooks/hooks';
+import { fetchTextId } from '../../store/textSlice';
 
+import style from './Card.module.scss';
 const Card = () => {
   const { idText, idImg} = useParams();
   const dispatch = useAppDispath();

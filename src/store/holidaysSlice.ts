@@ -2,13 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { URI_API } from '../const/const';
 
 type Holidays = {
-  programmingday: 'string',
-  newyear: 'string',
-  birthdayWomen: 'string',
-  birthdayMen: 'string',
-  womenday: 'string',
-  knowledgeday: 'string',
-  teacherday: 'string',
+  [key: string]: string,
 }
 export const fetchHolidays = createAsyncThunk<Holidays, void, {rejectValue: string}>(
   'holidays/fetchHolidays',
